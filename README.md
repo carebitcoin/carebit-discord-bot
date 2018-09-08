@@ -51,7 +51,7 @@ command=/home/discordbot/.local/bin/pipenv run python3 bot.py
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/CarebitPriceBot.err.log
-stdout_logfile=/var/log/CarebitPriceBotafi.out.log
+stdout_logfile=/var/log/CarebitPriceBot.out.log
 
 That is assuming you have placed your bot in the home directory of user discordbot.
 
