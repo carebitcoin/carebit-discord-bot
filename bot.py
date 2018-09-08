@@ -36,19 +36,21 @@ async def background_loop():
 
             # Get the last price for selected fiat and calculate the value of the token in fiat.
             btcfia = fiat_data[os.getenv("BOTFIAT")]["last"]
-            tokfia = round(float(lst) * float(btcfia), 2)
+            tokfia = round(float(lst) * float(btcfia), 5)
 
             # Calculate the token volume
-            tokvol = round(float(vol) / float(ask), 3)
+            tokvol = round((float(vol) / 1000) / float(ask), 2)
 
             # Grab the first half of the pair
             toksym = os.getenv("BOTPAIR").split('_', 1)[0]
 
             playing = []
-            playing.append('฿ ' + str(lst) + ' BTC')
+            playing.append('Crypto-Bridge')
+            playing.append('Last ฿ ' + str(lst) + ' BTC')
+            playing.append('Ask ฿ ' + str(ask) + ' BTC')
             playing.append('$ ' + str(tokfia) + ' ' + os.getenv("BOTFIAT"))
             playing.append('฿ ' + str(vol) + ' VOL 24h')
-            playing.append(toksym + ' ' + str(tokvol) + ' VOL 24h')
+            playing.append(toksym + ' ' + str(tokvol) + 'k VOL 24h')
 
             # This loop is there to space out the request to the API for an avarage of 5 minutes.
             for time in range(5):
