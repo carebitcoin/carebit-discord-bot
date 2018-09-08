@@ -11,7 +11,7 @@ pip install pipenv
 
 ## Installing the bot:
 ```
-git clone https://github.com/gluneau/discord-crypto-bot.git
+git clone https://github.com/carebitcoin/carebit-discord-bot.git
 cd discord-crypto-bot
 pipenv install
 ```
